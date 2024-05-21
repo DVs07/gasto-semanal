@@ -1,7 +1,6 @@
 body {
-    background: #000428;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #004e92, #000428);  
-background: linear-gradient(to right, #004e92, #000428); 
+    background: #1526c4;  
+    /* background: #0f2598; */
 }
 header {
     margin: 30px 0;
@@ -35,4 +34,53 @@ h2 {
     color:#004e92;
     font-size: 22px;
     margin-bottom:30px;
+}
+.rationale-regular {
+    font-family: "Rationale", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.libre-barcode-128-text-regular {
+    font-family: "Libre Barcode 128 Text", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.anek-tamil-regular {
+    font-family: "Anek Tamil", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+}
+.russo-one-regular {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} 
+.custom-btn {
+    background-color: #1a27de !important;
+    /* background-color: #0f2598 !important; */
+    border-color: #1a27de !important;
+    border-radius: 50px !important;
+    transition: all 0.3s ease-in-out;
+}
+i{
+    transition: all 0.3s ease-in-out;
+    margin-right: 5px;
+}
+/* .custom-btn:hover i {
+    transform: rotate(90deg);
+} */
+
+.custom-btn:hover i{
+    transform: translateX(5px);
+}
+button:hover{
+    background-color:  #1bc958 !important;
+    box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3);
+    border-color: #1bc958 !important;
+}
+.alert {
+    padding: .375rem 1.25rem !important;
 }

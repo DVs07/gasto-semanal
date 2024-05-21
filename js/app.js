@@ -8,6 +8,8 @@ eventenListener();
 function eventenListener() {
     document.addEventListener('DOMContentLoaded', preguntarPresupuesto);
 
+    formulario.addEventListener('submit', agregarGasto);
+
 }
 
 // Clases
@@ -45,4 +47,9 @@ function preguntarPresupuesto() {
     console.log(presupuesto);
 
     ui.insertarPresupuesto(presupuesto);
+}
+
+
+function agregarGasto(e) {
+    e.preventDefault();
 }
