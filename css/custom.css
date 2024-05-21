@@ -76,7 +76,7 @@ i{
 .custom-btn:hover i{
     transform: translateX(5px);
 }
-button:hover{
+.custom-btn:hover{
     background-color:  #1bc958 !important;
     box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3);
     border-color: #1bc958 !important;

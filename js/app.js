@@ -19,6 +19,12 @@ class Presupuesto {
         this.restante = Number(presupuesto);
         this.gastos = [];
     }
+
+    nuevoGasto(gasto) {
+        // console.log(gasto);
+        this.gastos = [...this.gastos, gasto];
+        // console.log(this.gastos);
+    }
 }
 
 class UI {
@@ -46,13 +52,39 @@ class UI {
         divMensaje.textContent = mensaje;
 
         // Insertar en el DOM
-        document.querySelector('.primario').insertBefore(divMensaje, formulario);
+        // document.querySelector('.primario').insertBefore(divMensaje, formulario);
+        formulario.appendChild(divMensaje);
 
         // Quitar el alert despues de 3 segundos
         setTimeout(() => {
             divMensaje.remove();
         }, 3000);
     };
+
+    mostrarListaGastos(gastos) {
+    gastos.forEach(gasto => {
+            // console.log(gasto);
+            const {nombreGasto, cantidad, id} = gasto;
+
+            // Crear un li para cada gasto
+            const nuevoGasto = document.createElement('li');
+            nuevoGasto.className = 'list-group-item d-flex justify-content-between align-items-center';
+            nuevoGasto.dataset.id = id;
+
+            // Insertar el HTML del gasto
+            nuevoGasto.innerHTML = `${nombreGasto} <span class="badge badge-primary badge-pill">$ ${cantidad}</span>`;
+
+
+            // Boton para borrar el gasto
+            const btnBorrar = document.createElement('button');
+            btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto');
+            nuevoGasto.appendChild(btnBorrar);
+            btnBorrar.innerHTML = 'Borrar &times';
+
+            // Agregar el HTML
+            gastoListado.appendChild(nuevoGasto);
+        });
+    }
 }
 
 // Instanciar
@@ -70,7 +102,7 @@ function preguntarPresupuesto() {
     }
     
     presupuesto = new Presupuesto(presupuestoUsuario);
-    console.log(presupuesto);
+    // console.log(presupuesto);
 
     ui.insertarPresupuesto(presupuesto);
 }
@@ -93,4 +125,22 @@ function agregarGasto(e) {
     }
 
     console.log('Se agrego el gasto');
+
+    // Generar un nuevo gasto
+    const gasto = {nombreGasto, cantidad, id: Date.now()};
+
+    // Agregarlo al arreglo de gastos
+    presupuesto.nuevoGasto(gasto);
+    // console.log(gasto);
+
+    // Mensaje de gasto agregado correctamente
+    ui.imprimirAlerta('Gasto agregado correctamente');
+
+    // Imprimir los gastos
+    const {gastos} = presupuesto;
+
+    ui.mostrarListaGastos(gastos);
+
+    // Reiniciar el formulario
+    formulario.reset();
 }
