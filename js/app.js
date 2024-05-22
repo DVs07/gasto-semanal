@@ -2,6 +2,7 @@
 let presupuesto;
 const formulario = document.querySelector('#agregar-gasto');
 const gastoListado = document.querySelector('#gastos ul');
+// const table = document.querySelector('.table');
 
 // Eventos
 eventenListener();
@@ -62,28 +63,36 @@ class UI {
     };
 
     mostrarListaGastos(gastos) {
+        // Eliminar el HTML previo
+        this.limpiarHTML();
     gastos.forEach(gasto => {
             // console.log(gasto);
             const {nombreGasto, cantidad, id} = gasto;
-
-            // Crear un li para cada gasto
+            // // Crear un li para cada gasto
             const nuevoGasto = document.createElement('li');
             nuevoGasto.className = 'list-group-item d-flex justify-content-between align-items-center';
             nuevoGasto.dataset.id = id;
 
-            // Insertar el HTML del gasto
-            nuevoGasto.innerHTML = `${nombreGasto} <span class="badge badge-primary badge-pill">$ ${cantidad}</span>`;
+            // // Insertar el HTML del gasto
+            nuevoGasto.innerHTML = `<span class="col-6">${nombreGasto}</span> <span class="badge badge-primary badge-pill col-3 col-sm-2">$ ${cantidad}</span>`;
 
 
-            // Boton para borrar el gasto
+            // // Boton para borrar el gasto
             const btnBorrar = document.createElement('button');
-            btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto');
+            btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto', 'rounded-circle', 'btn-borrar', 'col-2', 'col-sm-1');
             nuevoGasto.appendChild(btnBorrar);
-            btnBorrar.innerHTML = 'Borrar &times';
-
+            btnBorrar.innerHTML = `<i class="fa fa-times" aria-hidden="true"></i>`;
+            
             // Agregar el HTML
             gastoListado.appendChild(nuevoGasto);
+            // table.classList.remove('hidden');
         });
+    }
+
+    limpiarHTML() {
+        while (gastoListado.firstChild) {
+            gastoListado.removeChild(gastoListado.firstChild);
+        }
     }
 }
 

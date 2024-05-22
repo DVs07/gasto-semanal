@@ -65,7 +65,7 @@ h2 {
     border-radius: 50px !important;
     transition: all 0.3s ease-in-out;
 }
-i{
+.fa-chevron-circle-right{
     transition: all 0.3s ease-in-out;
     margin-right: 5px;
 }
@@ -83,4 +83,18 @@ i{
 }
 .alert {
     padding: .375rem 1.25rem !important;
+}
+.hidden {
+    display: none;
+}
+.bg-custom {
+    background-color: #1526c4 !important;
+    /* background-color: #0f2598 !important; */
+    color: white;
+}
+.btn-borrar {
+    padding: .1rem .5rem !important;
+}
+.badge{
+    padding: .5em .6em .5em .6em !important;
 }
