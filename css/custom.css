@@ -98,7 +98,18 @@ h2 {
 .badge{
     padding: .5em .6em .5em .6em !important;
 }
+.btn-disabled{
+    cursor: not-allowed !important;
+}
+.btn-disabled:hover{
+    background-color: #1526c4 !important;
+    border-color: #1526c4 !important;
+    box-shadow: none;
+}
 
+.btn-disabled:hover i{
+    transform: none;
+}
 
 @media only screen 
 and (max-width : 480px)
