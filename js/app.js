@@ -70,16 +70,16 @@ class UI {
             const {nombreGasto, cantidad, id} = gasto;
             // // Crear un li para cada gasto
             const nuevoGasto = document.createElement('li');
-            nuevoGasto.className = 'list-group-item d-flex justify-content-between align-items-center';
+            nuevoGasto.className = 'list-group-item d-flex justify-content-around align-items-center';
             nuevoGasto.dataset.id = id;
 
             // // Insertar el HTML del gasto
-            nuevoGasto.innerHTML = `<span class="col-6">${nombreGasto}</span> <span class="badge badge-primary badge-pill col-3 col-sm-2">$ ${cantidad}</span>`;
+            nuevoGasto.innerHTML = `<span class="badge badge-primary badge-pill col-6">${nombreGasto}</span> <span class="badge badge-info badge-pill col-3 col-sm-2">$ ${cantidad}</span>`;
 
 
             // // Boton para borrar el gasto
             const btnBorrar = document.createElement('button');
-            btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto', 'rounded-circle', 'btn-borrar', 'col-2', 'col-sm-1');
+            btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto', 'rounded-circle', 'btn-borrar', 'col-1', 'col-sm-1');
             nuevoGasto.appendChild(btnBorrar);
             btnBorrar.innerHTML = `<i class="fa fa-times" aria-hidden="true"></i>`;
             

@@ -98,3 +98,15 @@ h2 {
 .badge{
     padding: .5em .6em .5em .6em !important;
 }
+
+
+@media only screen 
+and (max-width : 480px)
+{
+    .btn-borrar{
+        padding: .1rem .8rem !important;
+    }
+    .btn-borrar i{
+        margin-left: -.35rem !important;
+    }
+}
