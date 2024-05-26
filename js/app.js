@@ -21,9 +21,8 @@ class Presupuesto {
     }
 
     nuevoGasto(gasto) {
-        // console.log(gasto);
         this.gastos = [...this.gastos, gasto];
-        // console.log(this.gastos);
+
         this.calcularRestante();
     }
 
@@ -35,9 +34,8 @@ class Presupuesto {
     }
 
     eliminarGasto(id) {
-        // console.log('Desde la clase Presupuesto');
         this.gastos = this.gastos.filter(gasto => gasto.id !== id);
-        // console.log(this.gastos);
+
         this.calcularRestante();
     }
 }
@@ -67,7 +65,6 @@ class UI {
         divMensaje.textContent = mensaje;
 
         // Insertar en el DOM
-        // document.querySelector('.primario').insertBefore(divMensaje, formulario);
         formulario.appendChild(divMensaje);
 
         // Quitar el alert despues de 3 segundos
@@ -104,7 +101,6 @@ class UI {
             
             // Agregar el HTML
             gastoListado.appendChild(nuevoGasto);
-            // table.classList.remove('hidden');
         });
     }
 
@@ -160,7 +156,6 @@ function preguntarPresupuesto() {
     }
     
     presupuesto = new Presupuesto(presupuestoUsuario);
-    // console.log(presupuesto);
 
     ui.insertarPresupuesto(presupuesto);
 }
@@ -189,7 +184,6 @@ function agregarGasto(e) {
 
     // Agregarlo al arreglo de gastos
     presupuesto.nuevoGasto(gasto);
-    // console.log(gasto);
 
     // Mensaje de gasto agregado correctamente
     ui.imprimirAlerta('Gasto agregado correctamente');
@@ -206,8 +200,6 @@ function agregarGasto(e) {
 
 // Funcion para eliminar gastos
 function eliminarGasto(id){
-    // console.log(id);
-
     // Elimina el gasto por el ID, el gasto se elimina del arreglo de gastos. 
     presupuesto.eliminarGasto(id);
 
