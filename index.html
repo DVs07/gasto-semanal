@@ -14,73 +14,82 @@
 
 </head>
 <body>
+    <nav>
+        <h3 class="text-center anek-tamil-regular">Gasto Semanal</h3>
+    </nav>
+    <main>
     <div class="container">
-        <header>
-                <h1 class="text-center">Gasto Semanal</h1>
-        </header>
-        <section class="contenido-principal anek-tamil-regular ">
-            <div class="row">
-                <div class="col ">
-                    <div class="contenido primario">
-                        <h2 class="text-center">Ingrese sus gastos</h2>
-                            <form id="agregar-gasto" action="#">
-                                <div class="form-group">
-                                    
-                                    <input type="text" class="form-control" id="gasto" placeholder="Nombre del gasto. Ej. Transporte">
-                                </div>
-                                <div class="form-group">
-                                    
-                                    <div class="d-flex justify-content-between flex-wrap">
-                                        <input type="text" class="form-control col-sm-7 col-12 mb-3" id="cantidad" placeholder="Cantidad del gasto. Ej. 300">
-                                        <button type="submit" class="btn btn-primary col-sm-4 custom-btn col-12 mb-3"> 
-                                            <!-- <i class="fa fa-plus-circle" aria-hidden="true"></i> -->
-                                            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-
-                                            AGREGAR</button>
+            <!-- <header>
+                    <h1 class="text-center">Gasto Semanal</h1>
+            </header> -->
+            <section class="contenido-principal anek-tamil-regular ">
+                <div class="row">
+                    <div class="col ">
+                        <div class="contenido primario">
+                            <h2 class="text-center">Ingrese sus gastos</h2>
+                                <form id="agregar-gasto" action="#">
+                                    <div class="form-group">
+                                        
+                                        <input type="text" class="form-control" id="gasto" placeholder="Nombre del gasto. Ej. Transporte">
                                     </div>
+                                    <div class="form-group">
+                                        
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <input type="text" class="form-control col-sm-7 col-12 mb-3" id="cantidad" placeholder="Cantidad del gasto. Ej. 300">
+                                            <button type="submit" class="btn btn-primary col-sm-4 custom-btn col-12 mb-3"> 
+                                                <!-- <i class="fa fa-plus-circle" aria-hidden="true"></i> -->
+                                                <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+
+                                                AGREGAR</button>
+                                        </div>
+                                        
+                                    </div>
+
                                     
+                                </form>
+
+                        </div> <!--.contenido-->
+                    </div> <!--.col-->
+
+                    <div class="col">
+                        <div class="contenido secundario">
+
+                            <h2 class="text-center">Presupuesto</h2>
+
+                            <div id="presupuesto" class="presupuesto">
+                                <div class="alert alert-primary">
+                                    <p>Presupuesto: $ <span id="total"></span> </p>
                                 </div>
-
-                                
-                            </form>
-
-                    </div> <!--.contenido-->
-                </div> <!--.col-->
-
-                <div class="col">
-                    <div class="contenido secundario">
-
-                        <h2 class="text-center">Presupuesto</h2>
-
-                        <div id="presupuesto" class="presupuesto">
-                            <div class="alert alert-primary">
-                                <p>Presupuesto: $ <span id="total"></span> </p>
-                            </div>
-                            <div class="restante alert alert-success">
-                                <p>Restante: $ <span id="restante"></span></p>
-                            </div>
-                        </div> <!--.presupuesto-->
-                    </div> <!--.contenido-->
-                </div><!--.col-->
-            </div>
-            <!--.row-->
-            <!-- LISTA DE GASTOS -->
-            <section class="d-flex justify-content-center contenido-secundario mt-4">
-                <div class="col col-sm-7 col-12">
-                    <div id="gastos" class="col-12 col-sm-9">
-                        <h2 class="text-center mb-0">Lista de gastos</h2>
-                        <p class="text-center">
-                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-                        </p>
-                        <ul class="list-group">
-                            <!-- Agregue los gastos -->
-                        </ul>
-                    </div>
+                                <div class="restante alert alert-success">
+                                    <p>Restante: $ <span id="restante"></span></p>
+                                </div>
+                            </div> <!--.presupuesto-->
+                        </div> <!--.contenido-->
+                    </div><!--.col-->
                 </div>
+                <!--.row-->
+                <!-- LISTA DE GASTOS -->
+                <section class="d-flex justify-content-center contenido-secundario mt-4">
+                    <div class="col col-sm-7 col-12">
+                        <div id="gastos" class="col-12 col-sm-9">
+                            <h2 class="text-center mb-0">Lista de gastos</h2>
+                            <p class="text-center">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </p>
+                            <ul class="list-group">
+                                <!-- Agregue los gastos -->
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
             </section>
-            
-        </section>
-    </div>
+        </div>
+    </main>
+    <footer>
+        <p class="text-center">Todos los derechos reservados. ©</p>
+    </footer>
+    
 
 
     <script src="js/app.js"></script>
