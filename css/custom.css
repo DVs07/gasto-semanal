@@ -20,6 +20,11 @@ header {
     padding: 30px;
     border-radius: 20px;
 }
+.contenido-secundario{
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
 .presupuesto p{
     margin-bottom: 0;
     font-weight: bold;

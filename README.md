@@ -10,3 +10,7 @@ Cambios: Se inserto un nav, un footer y se rediseño el formulario.
 src='img/update1.png'>
 
 Proximas actualizaciones: Se cambiara la paleta de colores del proyecto, se permitira elegir entre el modo oscuro y el modo claro.
+
+Cambios: Se hicieron pequeños cambios en el diseño y la vista del formulario.
+<image
+src='img/update2.png'>
