@@ -15,37 +15,65 @@
 </head>
 <body>
     <!--  -->
-    <nav>
-        <h3 class="text-center anek-tamil-regular">Gasto Semanal</h3>
+    <nav class="navbar border border-bottom border-secondary bg-light">
+        <a class="navbar-brand anek-tamil-regular" href="#">Gasto Semanal</a>
     </nav>
     <!-- MAIN -->
-    <main>
+    <main class="container">
+        <div class="form-check form-switch form-check-reverse">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+            <label class="form-check-label" for="flexSwitchCheckReverse">Dark Mode</label>
+        </div>
     <!-- SECCION PRINCIPAL -->
-    <section class="contenido-principal anek-tamil-regular container col-sm-6">
-        <div class="row">
+    <section class="contenido-principal anek-tamil-regular col-sm-6 col-12 border border-secondary rounded bg-light container">
+        <!-- CONTENIDO PRINCIPAL -->
+        <div class="row mb-3 pl-3 pr-3">
             <!-- PRESUPUESTO -->
             <div class="col">
                 <div class="contenido secundario">
-                    <h2 class="text-center">Presupuesto</h2>
-                    <div id="presupuesto" class="presupuesto">
-                        <div class="row d-flex justify-content-around">
+                    <h2 class="text-center text-primary mt-3">Presupuesto</h2>
+                    <div id="presupuesto" class="presupuesto ">
+                        <!-- <div class="row d-flex justify-content-around">
                             <div class="alert alert-primary col-sm-5">
                             <p>Presupuesto: $ <span id="total"></span> </p>
                         </div>
                         <div class="restante alert alert-success col-sm-5">
                             <p>Restante: $ <span id="restante"></span></p>
                         </div>
+                        </div> -->
+                        <!-- ALTERNATIVA DE PRESUPUESTO -->
+                         <!-- PRESUPUESTO -->
+                        <div class=" row d-flex justify-content-center">
+                            <div class="alert alert-primary">
+                                <span>Presupuesto</span>
+                            </div>
+                            <div class="alert alert-secondary ml-2">
+                                <span>$</span>
+                            </div>
+                            <div class="alert alert-secondary ml-2">
+                                <span id="total">0.00</span>
+                            </div>
                         </div>
-                        
-                    </div> <!--.presupuesto-->
-                </div> <!--.contenido-->
-            
-            
+                        <!-- RESTANTE -->
+                        <div class="mb-3 row d-flex justify-content-center">
+                            <div class="alert alert-success">
+                                <span>Restante</span>
+                            </div>
+                            <div class="alert alert-secondary ml-2">
+                                <span>$</span>
+                            </div>
+                            <div class="alert alert-secondary ml-2">
+                                <span id="restante">0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <!-- INGRESE SUS GASTOS -->
                 <div class="contenido primario">
-                    <!-- INGRESE SUS GASTOS -->
-                    <h2 class="text-center">Ingrese sus gastos</h2>
+                    <h2 class="text-center text-primary">Ingrese sus gastos</h2>
+                    <!-- FORMULARIO -->
                     <form id="agregar-gasto" action="#">
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <div class="d-flex justify-content-between flex-wrap">
                                 <label for="" class="col-sm-3">Nombre:</label>
                                 <input type="text" class="form-control col-sm-9 col-12" id="gasto" placeholder="Ej: Transporte">
@@ -57,9 +85,28 @@
                                 <input type="text" class="form-control col-sm-4 col-12 mb-3" id="cantidad" placeholder="Ej: $300">
                                 <button type="submit" class="btn btn-primary col-sm-4 custom-btn col-12 mb-3"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
                                 AGREGAR
-                                </button>
-                            </div>
-                        </div>
+                                </button> -->
+                                <!-- FORMULARIO ALTERNATIVO -->
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Nombre</span>
+                                    </div>
+                                    
+                                    <input type="text" class="form-control" placeholder="Ej: Transporte" aria-label="Username" aria-describedby="basic-addon1" id="gasto">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="gasto">Importe</span>
+                                    </div>
+                                    
+                                    <input type="text" class="form-control" placeholder="Ej: 300" aria-label="Recipient's username" aria-describedby="basic-addon2" id="cantidad">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text border-right-0" id="">$</span>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-custom  border-left-0" type="submit">Agregar</button>
+                                    </div>
+                                </div>
                     </form>
                 </div> 
             </div> 
@@ -67,11 +114,11 @@
         </div>
     </section>
     <!-- SECCION SECUNDARIA -->
-    <section class="d-flex justify-content-center contenido-secundario mt-4 container col-sm-6 col-12">
+    <section class="d-flex justify-content-center contenido-secundario mt-4 container col-sm-6 col-12 border border-bottom border-secondary rounded bg-light">
         <!-- LISTA DE GASTOS -->
-        <div class="col">
+        <div class="col p-3">
             <div id="gastos" class="col">
-                <h2 class="text-center mb-0">Lista de gastos</h2>
+                <h2 class="text-center mb-0 text-primary">Lista de gastos</h2>
                     <p class="text-center">
                         <i class="fa fa-chevron-down" aria-hidden="true"></i>
                     </p>
@@ -84,9 +131,9 @@
     </div>
     </main>
     <!-- FOOTER -->
-    <footer>
-        <p class="text-center">Todos los derechos reservados. ©</p>
+    <footer class="pt-3 bg-light border border-top border-secondary mt-3">
+        <p class="text-center anek-tamil-regular text-primary">Todos los derechos reservados. ©</p>
     </footer>
-    <script src="js/app.js"></script> 
+    <script src="js/app.js"></script>
 </body>
 </html>
