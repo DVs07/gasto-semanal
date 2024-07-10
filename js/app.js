@@ -9,7 +9,6 @@ const primeraSeccion = document.querySelector('#primero');
 const segundoSeccion = document.querySelector('#segundo');
 const footer = document.querySelector('.footer');
 const texto = document.querySelectorAll('.texto');
-// const h2 = document.body.querySelectorAll('h2');
 
 // Eventos
 eventenListener();
@@ -64,15 +63,25 @@ class UI {
         const divMensaje = document.createElement('div');
         divMensaje.classList.add('text-center', 'alert');
 
-        // Agregar clase de bootstrap segun el tipo de error
+        /* Crear contenedor para el icono */
+        const icono = document.createElement('i');
+
+        // Agregar clase de bootstrap y el icono segun el tipo de error
         if (tipoMensaje === 'error') {
             divMensaje.classList.add('alert-danger');
+            icono.classList.add('fas', 'fa-exclamation-circle', 'me-2'); // Icono de error
         } else {
             divMensaje.classList.add('alert-success');
+            icono.classList.add('fas', 'fa-check-circle', 'me-2'); // Icono de éxito
         }
 
-        // Mensaje de error
-        divMensaje.textContent = mensaje;
+        // Crear el texto del mensaje
+        const textoMensaje = document.createElement('span');
+        textoMensaje.textContent = mensaje;
+
+        // Añadir el icono y el texto al div
+        divMensaje.appendChild(icono);
+        divMensaje.appendChild(textoMensaje);
 
         // Insertar en el DOM
         formulario.appendChild(divMensaje);
