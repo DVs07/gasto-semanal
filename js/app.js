@@ -2,6 +2,14 @@
 let presupuesto;
 const formulario = document.querySelector('#agregar-gasto');
 const gastoListado = document.querySelector('#gastos ul');
+const btnSwitch = document.querySelector('#btn-switch-theme');
+const html = document.querySelector('#htmlPage');
+const nav = document.querySelector('.navbar');
+const primeraSeccion = document.querySelector('#primero');
+const segundoSeccion = document.querySelector('#segundo');
+const footer = document.querySelector('.footer');
+const texto = document.querySelectorAll('.texto');
+// const h2 = document.body.querySelectorAll('h2');
 
 // Eventos
 eventenListener();
@@ -9,6 +17,8 @@ function eventenListener() {
     document.addEventListener('DOMContentLoaded', preguntarPresupuesto);
 
     formulario.addEventListener('submit', agregarGasto);
+
+    btnSwitch.addEventListener('change', cambiarTema);
 
 }
 
@@ -85,14 +95,14 @@ class UI {
             nuevoGasto.dataset.id = id;
 
             // // Insertar el HTML del gasto
-            nuevoGasto.innerHTML = `<span class="badge badge-primary badge-pill col-6">${nombreGasto}</span> <span class="badge badge-info badge-pill col-3 col-sm-2">$ ${cantidad}</span>`;
+            nuevoGasto.innerHTML = `<span class="text-center p-1 rounded alert alert-dark col-6 col-sm-6">${nombreGasto}</span>  <span class="text-center p-1 rounded alert alert-light col-1 col-sm-1">$</span> <span class="text-center p-1 rounded alert alert-light col-3 col-sm-3">${cantidad}</span>`;
 
 
             // // Boton para borrar el gasto
             const btnBorrar = document.createElement('button');
-            btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto', 'rounded-circle', 'btn-borrar', 'col-1', 'col-sm-1');
+            btnBorrar.classList.add('alert','col-1', 'col-sm-1');
             nuevoGasto.appendChild(btnBorrar);
-            btnBorrar.innerHTML = `<i class="fa fa-times" aria-hidden="true"></i>`;
+            btnBorrar.innerHTML = `<i class="fa fa-trash-o" aria-hidden="true"></i>`;
 
             // Evento para borrar el gasto
             btnBorrar.onclick = () => {
@@ -119,7 +129,7 @@ class UI {
         const restanteDiv = document.querySelector('.restante');
         // Comprobar 25% de presupuesto restante
         if ((presupuesto / 4) > restante) {
-            restanteDiv.classList.remove('alert-success','alert-warning');
+            restanteDiv.classList.remove('alert-success','alert-warning','border', 'border-secondary-subtle');
             restanteDiv.classList.add('alert-danger');
         } else if ((presupuesto / 2) > restante) {
             restanteDiv.classList.remove('alert-success');
@@ -210,4 +220,31 @@ function eliminarGasto(id){
     // Actualiza el restante
     ui.actualizarRestante(restante);
     ui.comprobarPresupuesto(presupuesto);
+}
+
+function cambiarTema() {
+    if(btnSwitch.checked) {
+        html.setAttribute('data-bs-theme', 'dark');
+        nav.classList.add('border-bottom'),
+        nav.classList.add('border-dark-subtle');
+        primeraSeccion.classList.add('border');
+        primeraSeccion.classList.add('border-dark-subtle');
+        segundoSeccion.classList.add('border');
+        segundoSeccion.classList.add('border-dark-subtle');
+        // texto.classList.add('text-light');
+        texto.forEach(e =>{
+            e.classList.add('text-light');
+        })
+    } else {
+        html.setAttribute('data-bs-theme', 'light');
+        nav.classList.remove('border-bottom'),
+        nav.classList.remove('border-dark-subtle');
+        primeraSeccion.classList.remove('border');
+        primeraSeccion.classList.remove('border-dark-subtle');
+        segundoSeccion.classList.remove('border');
+        segundoSeccion.classList.remove('border-dark-subtle');
+        texto.forEach(e =>{
+            e.classList.remove('text-light');
+        })
+    }
 }
