@@ -41,3 +41,11 @@ Modo oscuro
 <image
 src='img/update4_mos.png'>
 
+Vista previa del proyecto finalizado, con todos los cambios realizados.
+
+Modo claro
+<image
+src='img/update5_mcl.png'>
+Modo oscuro
+<image
+src='img/update5_mos.png'>
