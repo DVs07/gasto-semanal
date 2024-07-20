@@ -1,5 +1,7 @@
 # gasto-semanal
-Proyecto para saber el gasto semanal. Se uso el framework de Booststrap CSS y JS Vanilla.
+Proyecto que calcula el gasto semanal, según  el presupuesto ingresado. Es una SPA(single page application), el framework Bootstrap 5.6(versión más actual) fue utilizado para diseñar el proyecto y JS Vanilla para interactuar con el DOM. 
+
+A continuación se muestran los cambios que se realizaron durante el diseño de todo el proyecto.
 
 Vista previa:
 <image
